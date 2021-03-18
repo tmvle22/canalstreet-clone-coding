@@ -1,7 +1,308 @@
-@import url("https://fonts.googleapis.com/css2?family=B612+Mono&family=DM+Serif+Display:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Source+Code+Pro:wght@300;400;500&display=swap");
 @import "_variables";
 @import "_elements";
 
 * {
   box-sizing: border-box;
+}
+
+body {
+  width: inherit;
+  height: auto;
+  scrollbar-width: none;
+}
+
+#logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  height: 100px;
+  width: 100px;
+  top: 40px;
+  left: 40px;
+  img {
+    transform: scale(0.15);
+  }
+}
+
+header {
+  display: grid;
+  grid-template-columns: repeat(3, 33.3%);
+  grid-template-rows: 100vh;
+  position: fixed;
+  right: 0;
+  height: 100vh;
+  width: 14%;
+
+  .header-column {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 13vh;
+    h2 {
+      font-size: 20px;
+    }
+    .header-vertical {
+      transform: rotateZ(90deg);
+      font-family: $mainFont;
+      font-size: 20px;
+      font-weight: 500;
+      margin-top: 32vh;
+    }
+    &:first-child {
+      background-color: #5ea3ec;
+    }
+    &:nth-child(2) {
+      background-color: #f64444;
+    }
+    &:last-child {
+      background-color: #ffb400;
+    }
+  }
+}
+
+main {
+  height: auto;
+  width: 100%;
+  padding-right: 14%;
+  padding-top: 45vh;
+  .first-content {
+    padding: $mainPadding;
+    margin-bottom: 20vh;
+    font-size: 85px;
+    font-family: $titleFont;
+    p {
+      padding-right: 10%;
+      line-height: 1;
+      text-align: left;
+    }
+  }
+  .second-content {
+    width: 100%;
+    height: 120vh;
+    background-image: url("https://images.prismic.io/canalstreetmarket/1d99cf0e3a0144c1229f92ee5b3c63b0eaae893c_home-hero.jpg?auto=compress,format");
+    background-position: center center;
+    background-size: cover;
+    margin-bottom: 25vh;
+  }
+  .market {
+    display: flex;
+    flex-direction: column;
+    height: 150vh;
+    padding: $mainPadding;
+    margin-bottom: 30vh;
+
+    h1 {
+      font-family: $titleFont;
+      font-size: 130px;
+      text-align: left;
+      margin-bottom: 15vh;
+      padding-right: 30%;
+    }
+    .market-container {
+      display: flex;
+      justify-content: space-between;
+      .market__column {
+        width: 29%;
+        height: 320px;
+        .market__img-container {
+          width: 100%;
+          height: 65vh;
+
+          background-position: center center;
+          background-size: cover;
+          margin-bottom: 30px;
+        }
+        .img-one {
+          background-image: url("https://images.prismic.io/canalstreetmarket/8f74dfabde9ebd66d0d078ba6cf794c77dc8ac5b_home_page_one.jpg?auto=compress,format");
+        }
+        .img-two {
+          background-image: url("https://images.prismic.io/canalstreetmarket/20c7997073b456fda0e6de872d23b6183892bdde_home_page_two.jpg?auto=compress,format");
+        }
+        .img-three {
+          background-image: url("https://images.prismic.io/canalstreetmarket/13a988aff3e9c672350fe8330eb7386c3a85eeb9_home_page_three.jpg?auto=compress,format");
+        }
+        .market__texts {
+          display: flex;
+          flex-direction: column;
+          text-align: left;
+          line-height: 1.5;
+
+          font-family: $mainFont;
+          font-size: 13px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+  .events {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: $mainPadding;
+    width: 100%;
+    height: 110vh;
+    margin-bottom: 10vh;
+    .event__title {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-bottom: 15px;
+      padding-bottom: 10vh;
+      border-bottom: dashed 2px black;
+
+      h2 {
+        font-size: 60px;
+        font-weight: 700;
+        color: white;
+        text-shadow: 1px 1px 1px black;
+      }
+      .event__title-middle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 110px;
+        font-family: $titleFont;
+      }
+    }
+    .event__info {
+      display: flex;
+      justify-content: space-between;
+      font-family: $mainFont;
+      height: 45vh;
+      padding-top: 10vh;
+      border-top: dashed 2px black;
+      border-bottom: dashed 2px black;
+      .event__info-col {
+        width: 28%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        line-height: 1.5;
+        .event__date {
+          font-size: 12px;
+          margin-bottom: 30px;
+        }
+        span {
+          font-size: 15px;
+          text-align: center;
+        }
+      }
+    }
+    #just-for-a-border {
+      margin-top: 15px;
+      width: 100%;
+      border-top: dashed 1px black;
+    }
+    .see-all {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      bottom: 7%;
+      left: 0;
+      a {
+        border: solid 1px black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 65px;
+        width: 180px;
+        font-size: 15px;
+        text-decoration: none;
+        color: black;
+        font-family: $mainFont;
+        background-color: white;
+        transition: background-color 0.3s ease-in-out;
+        transition: color 0.3s ease-in-out;
+        &:hover {
+          background-color: black;
+          color: white;
+        }
+      }
+    }
+  }
+  .location {
+    width: 100%;
+    padding: $mainPadding;
+    margin-bottom: 10vh;
+    height: 70vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .location-box {
+      width: 47%;
+      height: 60vh;
+      border: 1px dashed black;
+    }
+    .location__address {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 70px;
+      font-family: $titleFont;
+      text-align: center;
+    }
+    .location__map {
+      background-image: url("https://images.prismic.io/canalstreetmarket/74921c6bf0abf767666c52a6af3c001c58643587_group-11.jpg?auto=compress,format");
+      background-position: center center;
+      background-size: cover;
+    }
+  }
+  footer {
+    width: 100%;
+    padding: $mainPadding;
+
+    .footer-first-row {
+      width: 100%;
+      height: 50vh;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-top: 10px solid rgba(0, 0, 0, 0.6);
+      border-bottom: 10px solid rgba(0, 0, 0, 0.6);
+
+      span {
+        font-size: 40px;
+        font-family: $titleFont;
+        margin-bottom: 30px;
+      }
+      .click-here {
+        width: 100%;
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+        a {
+          border: solid 1px black;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 55px;
+          width: 180px;
+          font-size: 15px;
+          text-decoration: none;
+          color: black;
+          font-family: $mainFont;
+          background-color: white;
+          transition: background-color 0.3s ease-in-out;
+          transition: color 0.3s ease-in-out;
+          &:hover {
+            background-color: black;
+            color: white;
+          }
+        }
+      }
+    }
+  }
 }
